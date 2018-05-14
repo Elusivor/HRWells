@@ -201,6 +201,23 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805140213016_Add Table Horses.cs" />
+    <Compile Include="Migrations\201805140213016_Add Table Horses.Designer.cs">
+      <DependentUpon>201805140213016_Add Table Horses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805140214508_Add Table Breeds.cs" />
+    <Compile Include="Migrations\201805140214508_Add Table Breeds.Designer.cs">
+      <DependentUpon>201805140214508_Add Table Breeds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805140224461_Edit Table Horses - with field Breed.cs" />
+    <Compile Include="Migrations\201805140224461_Edit Table Horses - with field Breed.Designer.cs">
+      <DependentUpon>201805140224461_Edit Table Horses - with field Breed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805140227163_Populate BreedTypes.cs" />
+    <Compile Include="Migrations\201805140227163_Populate BreedTypes.Designer.cs">
+      <DependentUpon>201805140227163_Populate BreedTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BreedType.cs" />
     <Compile Include="Models\Horse.cs" />
@@ -286,6 +303,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201805140213016_Add Table Horses.resx">
+      <DependentUpon>201805140213016_Add Table Horses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805140214508_Add Table Breeds.resx">
+      <DependentUpon>201805140214508_Add Table Breeds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805140224461_Edit Table Horses - with field Breed.resx">
+      <DependentUpon>201805140224461_Edit Table Horses - with field Breed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805140227163_Populate BreedTypes.resx">
+      <DependentUpon>201805140227163_Populate BreedTypes.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

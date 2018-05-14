@@ -13,6 +13,7 @@ namespace HRWells.Models
         public int Number { get; set; }
         public string Owner { get; set; }
         public float Weight { get; set; }
-        //public BreedType Breed { get; set; }
+        public BreedType Breed { get; set; }
+        public int BreedTypeID { get; set; }
     }
 }
