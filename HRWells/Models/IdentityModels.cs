@@ -24,8 +24,9 @@ namespace HRWells.Models
         public DbSet<BreedType> BreedTypes { get; set; }
         public DbSet<Jockey> Jockeys { get; set; }
         public DbSet<Track> Tracks{ get; set; }
-
-
+        public DbSet<Race> Races{ get; set; }
+        public DbSet<Entry> Entries { get; set; }
+        public DbSet<Bet> Bets { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

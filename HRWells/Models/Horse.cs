@@ -15,5 +15,8 @@ namespace HRWells.Models
         public float Weight { get; set; }
         public BreedType Breed { get; set; }
         public int BreedTypeID { get; set; }
+
+        //NAVIGATION PROPERTIES
+        public IEnumerable<Entry> Entries { get; set; }
     }
 }

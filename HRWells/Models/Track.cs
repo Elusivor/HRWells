@@ -11,5 +11,8 @@ namespace HRWells.Models
         public string Name { get; set; }
         public uint NumberOfLanes { get; set; }
         public uint Distance { get; set; }
+
+        // Navigation Properties
+        public IEnumerable<Race> Races { get; set; }
     }
 }
