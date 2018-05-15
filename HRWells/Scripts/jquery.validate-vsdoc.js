@@ -1,5 +1,5 @@
 ﻿/*
-* This file has been commented to support Visual Studio Intellisense.
+* this file has been commented to support Visual Studio Intellisense.
 * You should not use this file at runtime inside the browser--it is only
 * intended to be used only for design-time IntelliSense.  Please use the
 * standard jQuery library for all production use.
@@ -11,7 +11,7 @@
 * Note: While Microsoft is not the author of this file, Microsoft is
 * offering you a license subject to the terms of the Microsoft Software
 * License Terms for Microsoft ASP.NET Model View Controller 3.
-* Microsoft reserves all other rights. The notices below are provided
+* Microsoft reserves all other rights. the notices below are provided
 * for informational purposes only and are not the license terms under
 * which Microsoft distributed this file.
 *
@@ -27,7 +27,7 @@ $.extend($.fn, {
 	// http://docs.jquery.com/Plugins/Validation/validate
 	validate: function( options ) {
 		/// <summary>
-		/// Validates the selected form. This method sets up event handlers for submit, focus,
+		/// Validates the selected form. this method sets up event handlers for submit, focus,
 		/// keyup, blur and click to trigger validation of the entire form or individual
 		/// elements. Each one can be disabled, see the onxxx options (onsubmit, onfocusout,
 		/// onkeyup, onclick). focusInvalid focuses elements when submitting a invalid form.
@@ -58,8 +58,8 @@ $.extend($.fn, {
 				validator.cancelSubmit = true;
 			});
 			
-			// when a submitHandler is used, capture the submitting button
-			if (validator.settings.submitHandler) {
+			// when a submithandler is used, capture the submitting button
+			if (validator.settings.submithandler) {
 				this.find("input, button").filter(":submit").click(function() {
 					validator.submitButton = this;
 				});
@@ -69,15 +69,15 @@ $.extend($.fn, {
 			this.submit( function( event ) {
 				if ( validator.settings.debug )
 					// prevent form submit to be able to see console output
-					event.preventDefault();
+					event.preventhefault();
 					
 				function handle() {
-					if ( validator.settings.submitHandler ) {
+					if ( validator.settings.submithandler ) {
 						if (validator.submitButton) {
 							// insert a hidden input as a replacement for the missing submit button
 							var hidden = $("<input type='hidden'/>").attr("name", validator.submitButton.name).val(validator.submitButton.value).appendTo(validator.currentForm);
 						}
-						validator.settings.submitHandler.call( validator, validator.currentForm );
+						validator.settings.submithandler.call( validator, validator.currentForm );
 						if (validator.submitButton) {
 							// and clean up afterwards; thanks to no-block-scope, hidden can be referenced
 							hidden.remove();
@@ -226,10 +226,10 @@ $.validator.format = function(source, params) {
 	/// into the string.
 	/// </summary>
 	/// <param name="source" type="String">
-	/// The string to format.
+	/// the string to format.
 	/// </param>
 	/// <param name="params" type="String">
-	/// The first argument to insert, or an array of Strings to insert
+	/// the first argument to insert, or an array of Strings to insert
 	/// </param>
 	/// <returns type="String" />
 
@@ -301,8 +301,8 @@ $.extend($.validator, {
 		}
 	},
 
-	// http://docs.jquery.com/Plugins/Validation/Validator/setDefaults
-	setDefaults: function(settings) {
+	// http://docs.jquery.com/Plugins/Validation/Validator/sethefaults
+	sethefaults: function(settings) {
 		/// <summary>
 		/// Modify default settings for validation.
 		/// Accepts everything that Plugins/Validation/validate accepts.
@@ -315,7 +315,7 @@ $.extend($.validator, {
 	},
 
 	messages: {
-		required: "This field is required.",
+		required: "this field is required.",
 		remote: "Please fix this field.",
 		email: "Please enter a valid email address.",
 		url: "Please enter a valid URL.",
@@ -377,7 +377,7 @@ $.extend($.validator, {
 		form: function() {
 			/// <summary>
 			/// Validates the form, returns true if it is valid, false otherwise.
-			/// This behaves as a normal submit event, but returns the result.
+			/// this behaves as a normal submit event, but returns the result.
 			/// </summary>
 			/// <returns type="Boolean" />
 
@@ -402,7 +402,7 @@ $.extend($.validator, {
 		element: function( element ) {
 			/// <summary>
 			/// Validates a single element, returns true if it is valid, false otherwise.
-			/// This behaves as validation on blur or keyup, but returns the result.
+			/// this behaves as validation on blur or keyup, but returns the result.
 			/// </summary>
 			/// <param name="element" type="Selector">
 			/// An element to validate, must be inside the validated form.
@@ -476,7 +476,7 @@ $.extend($.validator, {
 		numberOfInvalids: function() {
 			/// <summary>
 			/// Returns the number of invalid fields.
-			/// This depends on the internal validator state. It covers all fields only after
+			/// this depends on the internal validator state. It covers all fields only after
 			/// validating the complete form (on submit or via $("form").valid()). After validating
 			/// a single element, only that element is counted. Most useful in combination with the
 			/// invalidHandler-option.
@@ -858,10 +858,10 @@ $.extend($.validator, {
 		/// class.
 		/// </summary>
 		/// <param name="name" type="String">
-		/// The name of the class rule to add
+		/// the name of the class rule to add
 		/// </param>
 		/// <param name="rules" type="Options">
-		/// The compound rules
+		/// the compound rules
 		/// </param>
 
 		className.constructor == String ?
@@ -1001,14 +1001,14 @@ $.extend($.validator, {
 		/// identifier), a javascript based function and a default string message.
 		/// </summary>
 		/// <param name="name" type="String">
-		/// The name of the method, used to identify and referencing it, must be a valid javascript
+		/// the name of the method, used to identify and referencing it, must be a valid javascript
 		/// identifier
 		/// </param>
 		/// <param name="method" type="Function">
-		/// The actual method implementation, returning true if an element is valid
+		/// the actual method implementation, returning true if an element is valid
 		/// </param>
 		/// <param name="message" type="String" optional="true">
-		/// (Optional) The default message to display for this method. Can be a function created by 
+		/// (Optional) the default message to display for this method. Can be a function created by 
 		/// jQuery.validator.format(value). When undefined, an already existing message is used 
 		/// (handy for localization), otherwise the field-specific messages have to be defined.
 		/// </param>

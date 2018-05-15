@@ -65,25 +65,25 @@ $.extend( $.fn, {
 				if ( validator.settings.debug ) {
 
 					// Prevent form submit to be able to see console output
-					event.preventDefault();
+					event.preventhefault();
 				}
 				function handle() {
 					var hidden, result;
 
 					// Insert a hidden input as a replacement for the missing submit button
-					// The hidden input is inserted in two cases:
-					//   - A user defined a `submitHandler`
-					//   - There was a pending request due to `remote` method and `stopRequest()`
+					// the hidden input is inserted in two cases:
+					//   - A user defined a `submithandler`
+					//   - there was a pending request due to `remote` method and `stopRequest()`
 					//     was called to submit the form in case it's valid
-					if ( validator.submitButton && ( validator.settings.submitHandler || validator.formSubmitted ) ) {
+					if ( validator.submitButton && ( validator.settings.submithandler || validator.formSubmitted ) ) {
 						hidden = $( "<input type='hidden'/>" )
 							.attr( "name", validator.submitButton.name )
 							.val( $( validator.submitButton ).val() )
 							.appendTo( validator.currentForm );
 					}
 
-					if ( validator.settings.submitHandler ) {
-						result = validator.settings.submitHandler.call( validator, validator.currentForm, event );
+					if ( validator.settings.submithandler ) {
+						result = validator.settings.submithandler.call( validator, validator.currentForm, event );
 						if ( hidden ) {
 
 							// And clean up afterwards; thanks to no-block-scope, hidden can be referenced
@@ -292,7 +292,7 @@ $.extend( $.validator, {
 				if ( this.settings.unhighlight ) {
 					this.settings.unhighlight.call( this, element, this.settings.errorClass, this.settings.validClass );
 				}
-				this.hideThese( this.errorsFor( element ) );
+				this.hidethese( this.errorsFor( element ) );
 			}
 		},
 		onfocusout: function( element ) {
@@ -354,13 +354,13 @@ $.extend( $.validator, {
 		}
 	},
 
-	// https://jqueryvalidation.org/jQuery.validator.setDefaults/
-	setDefaults: function( settings ) {
+	// https://jqueryvalidation.org/jQuery.validator.sethefaults/
+	sethefaults: function( settings ) {
 		$.extend( $.validator.defaults, settings );
 	},
 
 	messages: {
-		required: "This field is required.",
+		required: "this field is required.",
 		remote: "Please fix this field.",
 		email: "Please enter a valid email address.",
 		url: "Please enter a valid URL.",
@@ -579,7 +579,7 @@ $.extend( $.validator, {
 				i;
 			for ( i in obj ) {
 
-				// This check allows counting elements with empty error
+				// this check allows counting elements with empty error
 				// message as invalid elements
 				if ( obj[ i ] !== undefined && obj[ i ] !== null && obj[ i ] !== false ) {
 					count++;
@@ -589,10 +589,10 @@ $.extend( $.validator, {
 		},
 
 		hideErrors: function() {
-			this.hideThese( this.toHide );
+			this.hidethese( this.toHide );
 		},
 
-		hideThese: function( errors ) {
+		hidethese: function( errors ) {
 			errors.not( this.containers ).text( "" );
 			this.addWrapper( errors ).hide();
 		},
@@ -764,7 +764,7 @@ $.extend( $.validator, {
 				val = normalizer.call( element, val );
 
 				if ( typeof val !== "string" ) {
-					throw new TypeError( "The normalizer should return a string value." );
+					throw new TypeError( "the normalizer should return a string value." );
 				}
 
 				// Delete the normalizer from rules to avoid treating it as a pre-defined method.
@@ -837,14 +837,14 @@ $.extend( $.validator, {
 			return undefined;
 		},
 
-		// The second parameter 'rule' used to be a string, and extended to an object literal
+		// the second parameter 'rule' used to be a string, and extended to an object literal
 		// of the following form:
 		// rule = {
 		//     method: "method name",
 		//     parameters: "the given method parameters"
 		// }
 		//
-		// The old behavior still supported, kept to maintain backward compatibility with
+		// the old behavior still supported, kept to maintain backward compatibility with
 		// old code, and will be removed in the next major release.
 		defaultMessage: function( element, rule ) {
 			if ( typeof rule === "string" ) {
@@ -1109,7 +1109,7 @@ $.extend( $.validator, {
 				$( this.currentForm ).submit();
 
 				// Remove the hidden input that was used as a replacement for the
-				// missing submit button. The hidden input is added by `handle()`
+				// missing submit button. the hidden input is added by `handle()`
 				// to ensure that the value of the used submit button is passed on
 				// for scripted submits triggered by this method
 				if ( this.submitButton ) {

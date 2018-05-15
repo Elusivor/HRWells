@@ -1,0 +1,24 @@
+﻿using HRWells.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using System.Data.Entity;
+
+namespace HRWells.Controllers
+{
+    public class HorseController : Controller
+    {
+        // GET: Horse
+        public ActionResult Index()
+        {
+
+            using (ApplicationDbContext context = new ApplicationDbContext())
+            {
+                var horses = context.Horses.Include(h => h.Breed).ToList();
+                return View(horses);
+            }
+        }
+    }
+}

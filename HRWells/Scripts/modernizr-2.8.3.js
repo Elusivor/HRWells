@@ -10,7 +10,7 @@
  * Modernizr tests which native CSS3 and HTML5 features are available in
  * the current UA and makes the results available to you in two ways:
  * as properties on a global Modernizr object, and as classes on the
- * <html> element. This information allows you to progressively enhance
+ * <html> element. this information allows you to progressively enhance
  * your pages with a granular level of control over the experience.
  *
  * Modernizr has an optional (not included) conditional resource loader
@@ -100,12 +100,12 @@ window.Modernizr = (function( window, document, undefined ) {
           div = document.createElement('div'),
           // After page load injecting a fake body doesn't work so check if body exists
           body = document.body,
-          // IE6 and 7 won't return offsetWidth or offsetHeight unless it's in the body element, so we fake it.
+          // IE6 and 7 won't return offsetWidth or offsetheight unless it's in the body element, so we fake it.
           fakeBody = body || document.createElement('body');
 
       if ( parseInt(nodes, 10) ) {
           // In order not to give false positives we create a node for each test
-          // This also allows the method to scale for unspecified uses
+          // this also allows the method to scale for unspecified uses
           while ( nodes-- ) {
               node = document.createElement('div');
               node.id = testnames ? testnames[nodes] : mod + (nodes + 1);
@@ -120,7 +120,7 @@ window.Modernizr = (function( window, document, undefined ) {
       // Documents served as xml will throw if using &shy; so use xml friendly encoded version. See issue #277
       style = ['&#173;','<style id="s', mod, '">', rule, '</style>'].join('');
       div.id = mod;
-      // IE6 will false positive on some tests due to the style element inside the test div somehow interfering offsetHeight, so insert it into body or fakebody.
+      // IE6 will false positive on some tests due to the style element inside the test div somehow interfering offsetheight, so insert it into body or fakebody.
       // Opera will act all quirky when injecting elements in documentElement when page is served as xml, needs fakebody too. #270
       (body ? div : fakeBody).innerHTML += style;
       fakeBody.appendChild(div);
@@ -178,7 +178,7 @@ window.Modernizr = (function( window, document, undefined ) {
     // isEventSupported determines if a given element supports the given event
     // kangax.github.com/iseventsupported/
     //
-    // The following results are known incorrects:
+    // the following results are known incorrects:
     //   Modernizr.hasEvent("webkitTransitionEnd", elem) // false negative
     //   Modernizr.hasEvent("textInput") // in Webkit. github.com/Modernizr/Modernizr/issues/333
     //   ...
@@ -342,12 +342,12 @@ window.Modernizr = (function( window, document, undefined ) {
     }
     /*>>testprop*/
 
-    // TODO :: add testDOMProps
+    // TODO :: add testhOMProps
     /**
-     * testDOMProps is a generic DOM property test; if a browser supports
+     * testhOMProps is a generic DOM property test; if a browser supports
      *   a certain property, it won't return undefined for it.
      */
-    function testDOMProps( props, obj, elem ) {
+    function testhOMProps( props, obj, elem ) {
         for ( var i in props ) {
             var item = obj[props[i]];
             if ( item !== undefined) {
@@ -387,7 +387,7 @@ window.Modernizr = (function( window, document, undefined ) {
         // otherwise, they called .prefixed('requestAnimationFrame', window[, elem])
         } else {
           props = (prop + ' ' + (domPrefixes).join(ucProp + ' ') + ucProp).split(' ');
-          return testDOMProps(props, prefixed, elem);
+          return testhOMProps(props, prefixed, elem);
         }
     }
     /*>>testallprops*/
@@ -398,14 +398,14 @@ window.Modernizr = (function( window, document, undefined ) {
      * -----
      */
 
-    // The *new* flexbox
+    // the *new* flexbox
     // dev.w3.org/csswg/css3-flexbox
 
     tests['flexbox'] = function() {
       return testPropsAll('flexWrap');
     };
 
-    // The *old* flexbox
+    // the *old* flexbox
     // www.w3.org/TR/2009/WD-css3-flexbox-20090723/
 
     tests['flexboxlegacy'] = function() {
@@ -435,7 +435,7 @@ window.Modernizr = (function( window, document, undefined ) {
     };
 
     /*
-     * The Modernizr.touch test only indicates if the browser supports
+     * the Modernizr.touch test only indicates if the browser supports
      *    touch events, which does not necessarily reflect a touchscreen
      *    device, as evidenced by tablets running Windows 7 or, alas,
      *    the Palm Pre / WebOS (touch) phones.
@@ -504,9 +504,9 @@ window.Modernizr = (function( window, document, undefined ) {
     };
 
     // Per 1.6:
-    // This used to be Modernizr.historymanagement but the longer
+    // this used to be Modernizr.historymanagement but the longer
     // name has been deprecated in favor of a shorter and property-matching one.
-    // The old API is still available in 1.6, but as of 2.0 will throw a warning,
+    // the old API is still available in 1.6, but as of 2.0 will throw a warning,
     // and in the first release thereafter disappear entirely.
     tests['history'] = function() {
       return !!(window.history && history.pushState);
@@ -596,7 +596,7 @@ window.Modernizr = (function( window, document, undefined ) {
 
         setCssAll('opacity:.55');
 
-        // The non-literal . in this regex is intentional:
+        // the non-literal . in this regex is intentional:
         //   German Chrome returns this value as 0,55
         // github.com/Modernizr/Modernizr/issues/#issue/59/comment/516632
         return (/^0.55$/).test(mStyle.opacity);
@@ -663,7 +663,7 @@ window.Modernizr = (function( window, document, undefined ) {
           // Webkit allows this media query to succeed only if the feature is enabled.
           // `@media (transform-3d),(-webkit-transform-3d){ ... }`
           injectElementWithStyles('@media (transform-3d),(-webkit-transform-3d){#modernizr{left:9px;position:absolute;height:3px;}}', function( node, rule ) {
-            ret = node.offsetLeft === 9 && node.offsetHeight === 3;
+            ret = node.offsetLeft === 9 && node.offsetheight === 3;
           });
         }
         return ret;
@@ -702,7 +702,7 @@ window.Modernizr = (function( window, document, undefined ) {
         var bool;
 
         injectElementWithStyles(['#',mod,'{font:0/0 a}#',mod,':after{content:"',smile,'";visibility:hidden;font:3px/1 a}'].join(''), function( node ) {
-          bool = node.offsetHeight >= 3;
+          bool = node.offsetheight >= 3;
         });
 
         return bool;
@@ -710,7 +710,7 @@ window.Modernizr = (function( window, document, undefined ) {
 
 
 
-    // These tests evaluate support of the video/audio elements, as well as
+    // these tests evaluate support of the video/audio elements, as well as
     // testing what types of content they support.
     //
     // We're using the Boolean constructor here, so that we can extend the value
@@ -816,7 +816,7 @@ window.Modernizr = (function( window, document, undefined ) {
     };
 
 
-    // Thanks to Erik Dahlstrom
+    // thanks to Erik Dahlstrom
     tests['svg'] = function() {
         return !!document.createElementNS && !!document.createElementNS(ns.svg, 'svg').createSVGRect;
     };
@@ -834,7 +834,7 @@ window.Modernizr = (function( window, document, undefined ) {
         return !!document.createElementNS && /SVGAnimate/.test(toString.call(document.createElementNS(ns.svg, 'animate')));
     };
 
-    // This test is only for clip paths in SVG proper, not clip paths on HTML content
+    // this test is only for clip paths in SVG proper, not clip paths on HTML content
     // demo: srufaculty.sru.edu/david.dailey/svg/newstuff/clipPath4.svg
 
     // However read the comments to dig into applying SVG clippaths to HTML content here:
@@ -873,7 +873,7 @@ window.Modernizr = (function( window, document, undefined ) {
 
         /*>>inputtypes*/
         // Run through HTML5's new input types to see if the UA understands any.
-        //   This is put behind the tests runloop because it doesn't return a
+        //   this is put behind the tests runloop because it doesn't return a
         //   true/false like all the other tests; instead, it returns an object
         //   containing each input type with its corresponding true/false value
 
@@ -903,7 +903,7 @@ window.Modernizr = (function( window, document, undefined ) {
                               defaultView.getComputedStyle(inputElem, null).WebkitAppearance !== 'textfield' &&
                               // Mobile android web browser has false positive, so must
                               // check the height to see if the widget is actually there.
-                              (inputElem.offsetHeight !== 0);
+                              (inputElem.offsetheight !== 0);
 
                       docElement.removeChild(inputElem);
 
@@ -1019,7 +1019,7 @@ window.Modernizr = (function( window, document, undefined ) {
         var reSkip = /^<|^(?:button|map|select|textarea|object|iframe|option|optgroup)$/i;
 
         /** Not all elements can be cloned in IE **/
-        var saveClones = /^(?:a|b|code|div|fieldset|h1|h2|h3|h4|h5|h6|i|label|li|ol|p|q|span|strong|style|table|tbody|td|th|tr|ul)$/i;
+        var saveClones = /^(?:a|b|code|div|fieldset|h1|h2|h3|h4|h5|h6|i|label|li|ol|p|q|span|strong|style|table|tbody|th|th|tr|ul)$/i;
 
         /** Detect whether the browser supports default html5 styles */
         var supportsHtml5Styles;
@@ -1027,7 +1027,7 @@ window.Modernizr = (function( window, document, undefined ) {
         /** Name of the expando, to work with multiple documents or to re-shiv one document */
         var expando = '_html5shiv';
 
-        /** The id for the the documents expando */
+        /** the id for the the documents expando */
         var expanID = 0;
 
         /** Cached data for each document */
@@ -1066,9 +1066,9 @@ window.Modernizr = (function( window, document, undefined ) {
         /**
          * Creates a style sheet with the given CSS text and adds it to the document.
          * @private
-         * @param {Document} ownerDocument The document.
-         * @param {String} cssText The CSS text.
-         * @returns {StyleSheet} The style element.
+         * @param {Document} ownerDocument the document.
+         * @param {String} cssText the CSS text.
+         * @returns {StyleSheet} the style element.
          */
         function addStyleSheet(ownerDocument, cssText) {
           var p = ownerDocument.createElement('p'),
@@ -1091,7 +1091,7 @@ window.Modernizr = (function( window, document, undefined ) {
         /**
          * Returns the data associated to the given document
          * @private
-         * @param {Document} ownerDocument The document.
+         * @param {Document} ownerDocument the document.
          * @returns {Object} An object of data.
          */
         function getExpandoData(ownerDocument) {
@@ -1109,8 +1109,8 @@ window.Modernizr = (function( window, document, undefined ) {
          * returns a shived element for the given nodeName and document
          * @memberOf html5
          * @param {String} nodeName name of the element
-         * @param {Document} ownerDocument The context document.
-         * @returns {Object} The shived element.
+         * @param {Document} ownerDocument the context document.
+         * @returns {Object} the shived element.
          */
         function createElement(nodeName, ownerDocument, data){
           if (!ownerDocument) {
@@ -1145,8 +1145,8 @@ window.Modernizr = (function( window, document, undefined ) {
         /**
          * returns a shived DocumentFragment for the given document
          * @memberOf html5
-         * @param {Document} ownerDocument The context document.
-         * @returns {Object} The shived DocumentFragment.
+         * @param {Document} ownerDocument the context document.
+         * @returns {Object} the shived DocumentFragment.
          */
         function createDocumentFragment(ownerDocument, data){
           if (!ownerDocument) {
@@ -1169,7 +1169,7 @@ window.Modernizr = (function( window, document, undefined ) {
         /**
          * Shivs the `createElement` and `createDocumentFragment` methods of the document.
          * @private
-         * @param {Document|DocumentFragment} ownerDocument The document.
+         * @param {Document|DocumentFragment} ownerDocument the document.
          * @param {Object} data of the document.
          */
         function shivMethods(ownerDocument, data) {
@@ -1207,8 +1207,8 @@ window.Modernizr = (function( window, document, undefined ) {
         /**
          * Shivs the given document.
          * @memberOf html5
-         * @param {Document} ownerDocument The document to shiv.
-         * @returns {Document} The shived document.
+         * @param {Document} ownerDocument the document to shiv.
+         * @returns {Document} the shived document.
          */
         function shivDocument(ownerDocument) {
           if (!ownerDocument) {
@@ -1235,7 +1235,7 @@ window.Modernizr = (function( window, document, undefined ) {
         /*--------------------------------------------------------------------------*/
 
         /**
-         * The `html5` object is exposed so that more elements can be shived and
+         * the `html5` object is exposed so that more elements can be shived and
          * existing shiving can be detected on iframes.
          * @type Object
          * @example

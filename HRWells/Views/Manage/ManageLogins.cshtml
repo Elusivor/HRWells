@@ -12,7 +12,7 @@
     if (loginProviders.Count() == 0) {
         <div>
             <p>
-                There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkId=313242">this article</a>
+                there are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkId=313242">this article</a>
                 for details on setting up this ASP.NET application to support logging in via external services.
             </p>
         </div>
@@ -27,8 +27,8 @@
                     @foreach (var account in Model.CurrentLogins)
                     {
                         <tr>
-                            <td>@account.LoginProvider</td>
-                            <td>
+                            <th>@account.LoginProvider</th>
+                            <th>
                                 @if (ViewBag.ShowRemoveButton)
                                 {
                                     using (Html.BeginForm("RemoveLogin", "Manage"))
@@ -45,7 +45,7 @@
                                 {
                                     @: &nbsp;
                                 }
-                            </td>
+                            </th>
                         </tr>
                     }
                 </tbody>

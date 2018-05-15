@@ -1,7 +1,7 @@
 ﻿/*!
  * bootswatch v3.3.7
  * Homepage: http://bootswatch.com
- * Copyright 2012-2016 Thomas Park
+ * Copyright 2012-2016 thomas Park
  * Licensed under MIT
  * Based on Bootstrap
 */
@@ -229,7 +229,7 @@ table {
     border-spacing: 0;
 }
 
-td,
+th,
 th {
     padding: 0;
 }
@@ -311,13 +311,13 @@ th {
         border-collapse: collapse !important;
     }
 
-        .table td,
+        .table th,
         .table th {
             background-color: #fff !important;
         }
 
     .table-bordered th,
-    .table-bordered td {
+    .table-bordered th {
         border: 1px solid #ddd !important;
     }
 }
@@ -2903,9 +2903,9 @@ th {
     .table > thead > tr > th,
     .table > tbody > tr > th,
     .table > tfoot > tr > th,
-    .table > thead > tr > td,
-    .table > tbody > tr > td,
-    .table > tfoot > tr > td {
+    .table > thead > tr > th,
+    .table > tbody > tr > th,
+    .table > tfoot > tr > th {
         padding: 8px;
         line-height: 1.42857143;
         vertical-align: top;
@@ -2920,9 +2920,9 @@ th {
     .table > caption + thead > tr:first-child > th,
     .table > colgroup + thead > tr:first-child > th,
     .table > thead:first-child > tr:first-child > th,
-    .table > caption + thead > tr:first-child > td,
-    .table > colgroup + thead > tr:first-child > td,
-    .table > thead:first-child > tr:first-child > td {
+    .table > caption + thead > tr:first-child > th,
+    .table > colgroup + thead > tr:first-child > th,
+    .table > thead:first-child > tr:first-child > th {
         border-top: 0;
     }
 
@@ -2937,9 +2937,9 @@ th {
 .table-condensed > thead > tr > th,
 .table-condensed > tbody > tr > th,
 .table-condensed > tfoot > tr > th,
-.table-condensed > thead > tr > td,
-.table-condensed > tbody > tr > td,
-.table-condensed > tfoot > tr > td {
+.table-condensed > thead > tr > th,
+.table-condensed > tbody > tr > th,
+.table-condensed > tfoot > tr > th {
     padding: 5px;
 }
 
@@ -2950,14 +2950,14 @@ th {
     .table-bordered > thead > tr > th,
     .table-bordered > tbody > tr > th,
     .table-bordered > tfoot > tr > th,
-    .table-bordered > thead > tr > td,
-    .table-bordered > tbody > tr > td,
-    .table-bordered > tfoot > tr > td {
+    .table-bordered > thead > tr > th,
+    .table-bordered > tbody > tr > th,
+    .table-bordered > tfoot > tr > th {
         border: 1px solid #1c1e22;
     }
 
     .table-bordered > thead > tr > th,
-    .table-bordered > thead > tr > td {
+    .table-bordered > thead > tr > th {
         border-bottom-width: 2px;
     }
 
@@ -2975,123 +2975,123 @@ table col[class*="col-"] {
     display: table-column;
 }
 
-table td[class*="col-"],
+table th[class*="col-"],
 table th[class*="col-"] {
     position: static;
     float: none;
     display: table-cell;
 }
 
-.table > thead > tr > td.active,
-.table > tbody > tr > td.active,
-.table > tfoot > tr > td.active,
 .table > thead > tr > th.active,
 .table > tbody > tr > th.active,
 .table > tfoot > tr > th.active,
-.table > thead > tr.active > td,
-.table > tbody > tr.active > td,
-.table > tfoot > tr.active > td,
+.table > thead > tr > th.active,
+.table > tbody > tr > th.active,
+.table > tfoot > tr > th.active,
+.table > thead > tr.active > th,
+.table > tbody > tr.active > th,
+.table > tfoot > tr.active > th,
 .table > thead > tr.active > th,
 .table > tbody > tr.active > th,
 .table > tfoot > tr.active > th {
     background-color: #49515a;
 }
 
-.table-hover > tbody > tr > td.active:hover,
 .table-hover > tbody > tr > th.active:hover,
-.table-hover > tbody > tr.active:hover > td,
+.table-hover > tbody > tr > th.active:hover,
+.table-hover > tbody > tr.active:hover > th,
 .table-hover > tbody > tr:hover > .active,
 .table-hover > tbody > tr.active:hover > th {
     background-color: #3e444c;
 }
 
-.table > thead > tr > td.success,
-.table > tbody > tr > td.success,
-.table > tfoot > tr > td.success,
 .table > thead > tr > th.success,
 .table > tbody > tr > th.success,
 .table > tfoot > tr > th.success,
-.table > thead > tr.success > td,
-.table > tbody > tr.success > td,
-.table > tfoot > tr.success > td,
+.table > thead > tr > th.success,
+.table > tbody > tr > th.success,
+.table > tfoot > tr > th.success,
+.table > thead > tr.success > th,
+.table > tbody > tr.success > th,
+.table > tfoot > tr.success > th,
 .table > thead > tr.success > th,
 .table > tbody > tr.success > th,
 .table > tfoot > tr.success > th {
     background-color: #62c462;
 }
 
-.table-hover > tbody > tr > td.success:hover,
 .table-hover > tbody > tr > th.success:hover,
-.table-hover > tbody > tr.success:hover > td,
+.table-hover > tbody > tr > th.success:hover,
+.table-hover > tbody > tr.success:hover > th,
 .table-hover > tbody > tr:hover > .success,
 .table-hover > tbody > tr.success:hover > th {
     background-color: #4fbd4f;
 }
 
-.table > thead > tr > td.info,
-.table > tbody > tr > td.info,
-.table > tfoot > tr > td.info,
 .table > thead > tr > th.info,
 .table > tbody > tr > th.info,
 .table > tfoot > tr > th.info,
-.table > thead > tr.info > td,
-.table > tbody > tr.info > td,
-.table > tfoot > tr.info > td,
+.table > thead > tr > th.info,
+.table > tbody > tr > th.info,
+.table > tfoot > tr > th.info,
+.table > thead > tr.info > th,
+.table > tbody > tr.info > th,
+.table > tfoot > tr.info > th,
 .table > thead > tr.info > th,
 .table > tbody > tr.info > th,
 .table > tfoot > tr.info > th {
     background-color: #5bc0de;
 }
 
-.table-hover > tbody > tr > td.info:hover,
 .table-hover > tbody > tr > th.info:hover,
-.table-hover > tbody > tr.info:hover > td,
+.table-hover > tbody > tr > th.info:hover,
+.table-hover > tbody > tr.info:hover > th,
 .table-hover > tbody > tr:hover > .info,
 .table-hover > tbody > tr.info:hover > th {
     background-color: #46b8da;
 }
 
-.table > thead > tr > td.warning,
-.table > tbody > tr > td.warning,
-.table > tfoot > tr > td.warning,
 .table > thead > tr > th.warning,
 .table > tbody > tr > th.warning,
 .table > tfoot > tr > th.warning,
-.table > thead > tr.warning > td,
-.table > tbody > tr.warning > td,
-.table > tfoot > tr.warning > td,
+.table > thead > tr > th.warning,
+.table > tbody > tr > th.warning,
+.table > tfoot > tr > th.warning,
+.table > thead > tr.warning > th,
+.table > tbody > tr.warning > th,
+.table > tfoot > tr.warning > th,
 .table > thead > tr.warning > th,
 .table > tbody > tr.warning > th,
 .table > tfoot > tr.warning > th {
     background-color: #f89406;
 }
 
-.table-hover > tbody > tr > td.warning:hover,
 .table-hover > tbody > tr > th.warning:hover,
-.table-hover > tbody > tr.warning:hover > td,
+.table-hover > tbody > tr > th.warning:hover,
+.table-hover > tbody > tr.warning:hover > th,
 .table-hover > tbody > tr:hover > .warning,
 .table-hover > tbody > tr.warning:hover > th {
     background-color: #df8505;
 }
 
-.table > thead > tr > td.danger,
-.table > tbody > tr > td.danger,
-.table > tfoot > tr > td.danger,
 .table > thead > tr > th.danger,
 .table > tbody > tr > th.danger,
 .table > tfoot > tr > th.danger,
-.table > thead > tr.danger > td,
-.table > tbody > tr.danger > td,
-.table > tfoot > tr.danger > td,
+.table > thead > tr > th.danger,
+.table > tbody > tr > th.danger,
+.table > tfoot > tr > th.danger,
+.table > thead > tr.danger > th,
+.table > tbody > tr.danger > th,
+.table > tfoot > tr.danger > th,
 .table > thead > tr.danger > th,
 .table > tbody > tr.danger > th,
 .table > tfoot > tr.danger > th {
     background-color: #ee5f5b;
 }
 
-.table-hover > tbody > tr > td.danger:hover,
 .table-hover > tbody > tr > th.danger:hover,
-.table-hover > tbody > tr.danger:hover > td,
+.table-hover > tbody > tr > th.danger:hover,
+.table-hover > tbody > tr.danger:hover > th,
 .table-hover > tbody > tr:hover > .danger,
 .table-hover > tbody > tr.danger:hover > th {
     background-color: #ec4844;
@@ -3118,9 +3118,9 @@ table th[class*="col-"] {
             .table-responsive > .table > thead > tr > th,
             .table-responsive > .table > tbody > tr > th,
             .table-responsive > .table > tfoot > tr > th,
-            .table-responsive > .table > thead > tr > td,
-            .table-responsive > .table > tbody > tr > td,
-            .table-responsive > .table > tfoot > tr > td {
+            .table-responsive > .table > thead > tr > th,
+            .table-responsive > .table > tbody > tr > th,
+            .table-responsive > .table > tfoot > tr > th {
                 white-space: nowrap;
             }
 
@@ -3131,25 +3131,25 @@ table th[class*="col-"] {
             .table-responsive > .table-bordered > thead > tr > th:first-child,
             .table-responsive > .table-bordered > tbody > tr > th:first-child,
             .table-responsive > .table-bordered > tfoot > tr > th:first-child,
-            .table-responsive > .table-bordered > thead > tr > td:first-child,
-            .table-responsive > .table-bordered > tbody > tr > td:first-child,
-            .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+            .table-responsive > .table-bordered > thead > tr > th:first-child,
+            .table-responsive > .table-bordered > tbody > tr > th:first-child,
+            .table-responsive > .table-bordered > tfoot > tr > th:first-child {
                 border-left: 0;
             }
 
             .table-responsive > .table-bordered > thead > tr > th:last-child,
             .table-responsive > .table-bordered > tbody > tr > th:last-child,
             .table-responsive > .table-bordered > tfoot > tr > th:last-child,
-            .table-responsive > .table-bordered > thead > tr > td:last-child,
-            .table-responsive > .table-bordered > tbody > tr > td:last-child,
-            .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+            .table-responsive > .table-bordered > thead > tr > th:last-child,
+            .table-responsive > .table-bordered > tbody > tr > th:last-child,
+            .table-responsive > .table-bordered > tfoot > tr > th:last-child {
                 border-right: 0;
             }
 
             .table-responsive > .table-bordered > tbody > tr:last-child > th,
             .table-responsive > .table-bordered > tfoot > tr:last-child > th,
-            .table-responsive > .table-bordered > tbody > tr:last-child > td,
-            .table-responsive > .table-bordered > tfoot > tr:last-child > td {
+            .table-responsive > .table-bordered > tbody > tr:last-child > th,
+            .table-responsive > .table-bordered > tfoot > tr:last-child > th {
                 border-bottom: 0;
             }
 }
@@ -6774,10 +6774,10 @@ button.list-group-item-danger {
             border-top-right-radius: 3px;
         }
 
-            .panel > .table:first-child > thead:first-child > tr:first-child td:first-child,
-            .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
-            .panel > .table:first-child > tbody:first-child > tr:first-child td:first-child,
-            .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+            .panel > .table:first-child > thead:first-child > tr:first-child th:first-child,
+            .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,
+            .panel > .table:first-child > tbody:first-child > tr:first-child th:first-child,
+            .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child,
             .panel > .table:first-child > thead:first-child > tr:first-child th:first-child,
             .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,
             .panel > .table:first-child > tbody:first-child > tr:first-child th:first-child,
@@ -6785,10 +6785,10 @@ button.list-group-item-danger {
                 border-top-left-radius: 3px;
             }
 
-            .panel > .table:first-child > thead:first-child > tr:first-child td:last-child,
-            .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,
-            .panel > .table:first-child > tbody:first-child > tr:first-child td:last-child,
-            .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+            .panel > .table:first-child > thead:first-child > tr:first-child th:last-child,
+            .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,
+            .panel > .table:first-child > tbody:first-child > tr:first-child th:last-child,
+            .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child,
             .panel > .table:first-child > thead:first-child > tr:first-child th:last-child,
             .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,
             .panel > .table:first-child > tbody:first-child > tr:first-child th:last-child,
@@ -6810,10 +6810,10 @@ button.list-group-item-danger {
             border-bottom-right-radius: 3px;
         }
 
-            .panel > .table:last-child > tbody:last-child > tr:last-child td:first-child,
-            .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,
-            .panel > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
-            .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+            .panel > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+            .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+            .panel > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
+            .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
             .panel > .table:last-child > tbody:last-child > tr:last-child th:first-child,
             .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,
             .panel > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
@@ -6821,10 +6821,10 @@ button.list-group-item-danger {
                 border-bottom-left-radius: 3px;
             }
 
-            .panel > .table:last-child > tbody:last-child > tr:last-child td:last-child,
-            .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,
-            .panel > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
-            .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+            .panel > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+            .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+            .panel > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
+            .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
             .panel > .table:last-child > tbody:last-child > tr:last-child th:last-child,
             .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,
             .panel > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
@@ -6840,7 +6840,7 @@ button.list-group-item-danger {
     }
 
     .panel > .table > tbody:first-child > tr:first-child th,
-    .panel > .table > tbody:first-child > tr:first-child td {
+    .panel > .table > tbody:first-child > tr:first-child th {
         border-top: 0;
     }
 
@@ -6855,12 +6855,12 @@ button.list-group-item-danger {
     .panel > .table-responsive > .table-bordered > tbody > tr > th:first-child,
     .panel > .table-bordered > tfoot > tr > th:first-child,
     .panel > .table-responsive > .table-bordered > tfoot > tr > th:first-child,
-    .panel > .table-bordered > thead > tr > td:first-child,
-    .panel > .table-responsive > .table-bordered > thead > tr > td:first-child,
-    .panel > .table-bordered > tbody > tr > td:first-child,
-    .panel > .table-responsive > .table-bordered > tbody > tr > td:first-child,
-    .panel > .table-bordered > tfoot > tr > td:first-child,
-    .panel > .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+    .panel > .table-bordered > thead > tr > th:first-child,
+    .panel > .table-responsive > .table-bordered > thead > tr > th:first-child,
+    .panel > .table-bordered > tbody > tr > th:first-child,
+    .panel > .table-responsive > .table-bordered > tbody > tr > th:first-child,
+    .panel > .table-bordered > tfoot > tr > th:first-child,
+    .panel > .table-responsive > .table-bordered > tfoot > tr > th:first-child {
         border-left: 0;
     }
 
@@ -6870,19 +6870,19 @@ button.list-group-item-danger {
     .panel > .table-responsive > .table-bordered > tbody > tr > th:last-child,
     .panel > .table-bordered > tfoot > tr > th:last-child,
     .panel > .table-responsive > .table-bordered > tfoot > tr > th:last-child,
-    .panel > .table-bordered > thead > tr > td:last-child,
-    .panel > .table-responsive > .table-bordered > thead > tr > td:last-child,
-    .panel > .table-bordered > tbody > tr > td:last-child,
-    .panel > .table-responsive > .table-bordered > tbody > tr > td:last-child,
-    .panel > .table-bordered > tfoot > tr > td:last-child,
-    .panel > .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+    .panel > .table-bordered > thead > tr > th:last-child,
+    .panel > .table-responsive > .table-bordered > thead > tr > th:last-child,
+    .panel > .table-bordered > tbody > tr > th:last-child,
+    .panel > .table-responsive > .table-bordered > tbody > tr > th:last-child,
+    .panel > .table-bordered > tfoot > tr > th:last-child,
+    .panel > .table-responsive > .table-bordered > tfoot > tr > th:last-child {
         border-right: 0;
     }
 
-    .panel > .table-bordered > thead > tr:first-child > td,
-    .panel > .table-responsive > .table-bordered > thead > tr:first-child > td,
-    .panel > .table-bordered > tbody > tr:first-child > td,
-    .panel > .table-responsive > .table-bordered > tbody > tr:first-child > td,
+    .panel > .table-bordered > thead > tr:first-child > th,
+    .panel > .table-responsive > .table-bordered > thead > tr:first-child > th,
+    .panel > .table-bordered > tbody > tr:first-child > th,
+    .panel > .table-responsive > .table-bordered > tbody > tr:first-child > th,
     .panel > .table-bordered > thead > tr:first-child > th,
     .panel > .table-responsive > .table-bordered > thead > tr:first-child > th,
     .panel > .table-bordered > tbody > tr:first-child > th,
@@ -6890,10 +6890,10 @@ button.list-group-item-danger {
         border-bottom: 0;
     }
 
-    .panel > .table-bordered > tbody > tr:last-child > td,
-    .panel > .table-responsive > .table-bordered > tbody > tr:last-child > td,
-    .panel > .table-bordered > tfoot > tr:last-child > td,
-    .panel > .table-responsive > .table-bordered > tfoot > tr:last-child > td,
+    .panel > .table-bordered > tbody > tr:last-child > th,
+    .panel > .table-responsive > .table-bordered > tbody > tr:last-child > th,
+    .panel > .table-bordered > tfoot > tr:last-child > th,
+    .panel > .table-responsive > .table-bordered > tfoot > tr:last-child > th,
     .panel > .table-bordered > tbody > tr:last-child > th,
     .panel > .table-responsive > .table-bordered > tbody > tr:last-child > th,
     .panel > .table-bordered > tfoot > tr:last-child > th,
@@ -7980,7 +7980,7 @@ button.close {
     }
 
     th.visible-xs,
-    td.visible-xs {
+    th.visible-xs {
         display: table-cell !important;
     }
 }
@@ -8017,7 +8017,7 @@ button.close {
     }
 
     th.visible-sm,
-    td.visible-sm {
+    th.visible-sm {
         display: table-cell !important;
     }
 }
@@ -8054,7 +8054,7 @@ button.close {
     }
 
     th.visible-md,
-    td.visible-md {
+    th.visible-md {
         display: table-cell !important;
     }
 }
@@ -8091,7 +8091,7 @@ button.close {
     }
 
     th.visible-lg,
-    td.visible-lg {
+    th.visible-lg {
         display: table-cell !important;
     }
 }
@@ -8156,7 +8156,7 @@ button.close {
     }
 
     th.visible-print,
-    td.visible-print {
+    th.visible-print {
         display: table-cell !important;
     }
 }
@@ -8464,12 +8464,12 @@ h6 {
     color: #fff;
 }
 
-.table-bordered tbody tr.success td,
-.table-bordered tbody tr.warning td,
-.table-bordered tbody tr.danger td,
-.table-bordered tbody tr.success:hover td,
-.table-bordered tbody tr.warning:hover td,
-.table-bordered tbody tr.danger:hover td {
+.table-bordered tbody tr.success th,
+.table-bordered tbody tr.warning th,
+.table-bordered tbody tr.danger th,
+.table-bordered tbody tr.success:hover th,
+.table-bordered tbody tr.warning:hover th,
+.table-bordered tbody tr.danger:hover th {
     border-color: #1c1e22;
 }
 
