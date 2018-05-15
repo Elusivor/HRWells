@@ -11,6 +11,7 @@ namespace HRWells
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+            routes.AppendTrailingSlash = true;
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
