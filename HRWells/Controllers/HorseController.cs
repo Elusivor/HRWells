@@ -64,7 +64,12 @@ namespace HRWells.Controllers
                            .ToList();
 
                         break;
-
+                    case "breed":
+                        theList = context.Horses
+                            .Include(h => h.Breed)
+                            .Where(h => h.Breed.Name == (string)value)
+                            .ToList();
+                        break;
 
                     default:
                         return Content("Not found");

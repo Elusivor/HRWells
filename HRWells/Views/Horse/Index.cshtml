@@ -22,8 +22,15 @@
             <tr>
                 <td>@horse.Name</td>
                 <td>@horse.Age.ToString() Years</td>
-                <td>@horse.Number</td>
-                <td>@horse.Breed.Name</td>
+                <td># @horse.Number</td>
+                <td>@Html.ActionLink(horse.Breed.Name,
+                            "HorsesByAttrib",
+                            "Horse",new
+                            {
+                                attrib = "breed",
+                                value = horse.Breed.Name
+                            },null)</td>
+                
                 <td>@horse.Weight kg</td>
                 <td>@horse.Owner</td>
             </tr>
