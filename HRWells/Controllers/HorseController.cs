@@ -10,7 +10,7 @@ namespace HRWells.Controllers
 {
     public class HorseController : Controller
     {
-        ApplicationDbContext _context;
+        private ApplicationDbContext _context;
         public HorseController()
         {
             _context = new ApplicationDbContext();
@@ -90,6 +90,11 @@ namespace HRWells.Controllers
             }
             return View(MyHorse);
 
+        }
+        public ActionResult Delete(int ID)
+        {
+            _context.Horses.Remove(_context.Horses.Find(ID));
+            return View();
         }
     }
 }

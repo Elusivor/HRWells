@@ -20,7 +20,7 @@
         @foreach (var horse in Model)
         {
             <tr>
-                <td>@horse.Name</td>
+                <td>@Html.ActionLink(horse.Name, "single", new { horse.ID }, null)</td>
                 <td>@horse.Age.ToString() Years</td>
                 <td># @horse.Number</td>
                 <td>@Html.ActionLink(horse.Breed.Name,
