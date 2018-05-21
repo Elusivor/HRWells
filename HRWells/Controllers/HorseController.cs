@@ -84,8 +84,10 @@ namespace HRWells.Controllers
             Horse MyHorse;
 
             MyHorse = _context.Horses.Find(ID);
-            if (MyHorse != null)
+            if (MyHorse == null)
+            {
                 return HttpNotFound();
+            }
             return View(MyHorse);
 
         }
