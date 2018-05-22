@@ -1,0 +1,39 @@
+﻿@model HRWells.Models.Jockey
+@{
+    ViewBag.Title = "Single";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Single</h2>
+@Html.Partial("../Partial/_StyleLinks")
+@Html.Partial("../Partial/_DeleteDialog")
+
+<body>
+    <h2>@Model.Name</h2>
+    <table class=" table table-hover table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>@Html.LabelFor(m => m.Name)</td>
+            <td>@Model.Name</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.Weight)</td>
+            <td>@(Model.Weight.ToString() + "kg")</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.Age)</td>
+            <td>@Model.Age.ToString()</td>
+        </tr>
+    </table>
+
+    <button class="btn btn-primary fa fa-backward" onclick="location.href='@Url.Action("Index", "Jockey")';return false;"> Back To List</button>
+    <button class="btn btn-warning fa fa-edit" data-href="@Url.Action("Edit", "Jockey", new { ID = Model.ID})"> Edit Record</button>
+    <button class="btn btn-danger fa fa-trash" data-href="@Url.Action("Delete", "Jockey", new { ID = Model.ID})" data-toggle="modal" data-target="#confirm-delete"> Delete Record</button>
+
+</body>
+@Html.Partial("../Partial/_DeleteScript")

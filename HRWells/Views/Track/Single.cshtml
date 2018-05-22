@@ -1,9 +1,9 @@
-﻿@model HRWells.Models.Horse
+﻿@model HRWells.Models.Track
 @{
     ViewBag.Title = "Single";
     Layout = "~/Views/Shared/_Layout.cshtml";
-
 }
+
 @Html.Partial("../Partial/_StyleLinks")
 @Html.Partial("../Partial/_DeleteDialog")
 
@@ -17,20 +17,16 @@
             </tr>
         </thead>
         <tr>
-            <td>@Html.LabelFor(m => m.Number)</td>
-            <td>@Model.Number.ToString()</td>
+            <td>@Html.LabelFor(m => m.Name)</td>
+            <td>@Model.Name</td>
         </tr>
         <tr>
-            <td>@Html.LabelFor(m => m.Owner)</td>
-            <td>@Model.Owner</td>
+            <td>@Html.LabelFor(m => m.NumberOfLanes)</td>
+            <td>@Model.NumberOfLanes.ToString()</td>
         </tr>
         <tr>
-            <td>@Html.LabelFor(m => m.Weight)</td>
-            <td>@Model.Weight.ToString()</td>
-        </tr>
-        <tr>
-            <td>@Html.LabelFor(m => m.Breed)</td>
-            <td>@Model.BreedTypeID</td>
+            <td>@Html.LabelFor(m => m.Distance)</td>
+            <td>@Model.Distance.ToString()</td>
         </tr>
     </table>
 

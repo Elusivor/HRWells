@@ -202,6 +202,7 @@
     <Compile Include="Controllers\HorseController.cs" />
     <Compile Include="Controllers\JockeyController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TrackController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -260,6 +261,14 @@
     <Compile Include="Migrations\201805220306216_Populate-Table Jockeys.cs" />
     <Compile Include="Migrations\201805220306216_Populate-Table Jockeys.Designer.cs">
       <DependentUpon>201805220306216_Populate-Table Jockeys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805220347189_Fix-Table Tracks.cs" />
+    <Compile Include="Migrations\201805220347189_Fix-Table Tracks.Designer.cs">
+      <DependentUpon>201805220347189_Fix-Table Tracks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805220417284_Populate-Table Tracks.cs" />
+    <Compile Include="Migrations\201805220417284_Populate-Table Tracks.Designer.cs">
+      <DependentUpon>201805220417284_Populate-Table Tracks.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -340,6 +349,12 @@
     <Content Include="Views\Horse\Index.cshtml" />
     <Content Include="Views\Horse\Single.cshtml" />
     <Content Include="Views\Jockey\Index.cshtml" />
+    <Content Include="Views\Jockey\Single.cshtml" />
+    <Content Include="Views\Partial\_DeleteDialog.cshtml" />
+    <Content Include="Views\Partial\_DeleteScript.cshtml" />
+    <Content Include="Views\Track\Index.cshtml" />
+    <Content Include="Views\Partial\_StyleLinks.cshtml" />
+    <Content Include="Views\Track\Single.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -399,6 +414,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805220306216_Populate-Table Jockeys.resx">
       <DependentUpon>201805220306216_Populate-Table Jockeys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805220347189_Fix-Table Tracks.resx">
+      <DependentUpon>201805220347189_Fix-Table Tracks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805220417284_Populate-Table Tracks.resx">
+      <DependentUpon>201805220417284_Populate-Table Tracks.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

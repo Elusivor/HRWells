@@ -8,24 +8,23 @@ using HRWells.Models;
 
 namespace HRWells.Controllers
 {
-    public class JockeyController : Controller
+    public class TrackController : Controller
     {
         private ApplicationDbContext _context;
-        public JockeyController()
+        public TrackController()
         {
             _context = new ApplicationDbContext();
         }
-        // GET: Jockey
+        // GET: Track
         public ActionResult Index()
         {
-            var jockey = _context.Jockeys.ToList();
-            return View(jockey);
+            var track = _context.Tracks.ToList();
+            return View(track);
         }
-
         public ActionResult Single(int ID)
         {
-            var Jockey = _context.Jockeys.Find(ID);
-            return View(Jockey);
+            var Track = _context.Tracks.Find(ID);
+            return View(Track);
         }
     }
 }
