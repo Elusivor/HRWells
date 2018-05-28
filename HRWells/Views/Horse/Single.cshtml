@@ -4,10 +4,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 
 }
-@Html.Partial("../Partial/_StyleLinks")
+@Html.Partial("_StyleLinks")
+@Html.Partial("_DeleteDialog")
 
 <h2>@Model.Name</h2>
-@Html.Partial("../Partial/_DeleteDialog")
 
 <table class=" table table-hover table-striped">
     <thead>
@@ -38,4 +38,4 @@
 <button class="btn btn-warning fa fa-edit" data-href="@Url.Action("Edit", "Horse", new { ID = Model.ID})"> Edit Record</button>
 <button class="btn btn-danger fa fa-trash" data-toggle="modal" data-target="#confirm-delete" data-href="@Url.Action("Delete", "Horse", new { ID = Model.ID})"> Delete Record</button>
 
-@Html.Partial("../Partial/_DeleteScript")
+@Html.Partial("_DeleteScript")

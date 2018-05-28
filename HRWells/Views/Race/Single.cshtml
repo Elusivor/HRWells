@@ -1,0 +1,39 @@
+﻿@model HRWells.Models.Race
+@{
+    ViewBag.Title = "Single";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Race @Model.ID</h2>
+
+@Html.Partial("_StyleLinks")
+@Html.Partial("_DeleteDialog")
+
+<table class=" table table-hover table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tr style="cursor:pointer;">
+        <td>@Html.LabelFor(m => m.TOD, "Race Date")</td>
+        <td>@Model.TOD.ToString("ddd dd MMM yyyy 'at' HH:mm")</td>
+    </tr>
+    <tr style="cursor:pointer;">
+        <td>@Html.LabelFor(m => m.Track.Name, "Track Name")</td>
+        <td>@Model.Track.Name</td>
+    </tr>
+    <tr style="cursor:pointer;">
+        <td>@Html.LabelFor(m => m.Track.Distance, "Track Distance")</td>
+        <td>@(Model.Track.Distance + " km")</td>
+    </tr>
+</table>
+
+<a class="btn btn-primary fa fa-backward" onclick="location.href='@Url.Action("Index", "Race")';return false;"> Back To List</a>
+<a class="btn btn-warning fa fa-edit" data-href="@Url.Action("Edit", "Race", new { ID = Model.ID})"> Edit Record</a>
+<a class="btn btn-danger fa fa-trash" data-href="@Url.Action("Delete", "Race", new { ID = Model.ID})" data-toggle="modal" data-target="#confirm-delete">Delete Record</a>
+
+@section Scripts{
+    @Html.Partial("_DeleteScript")
+}

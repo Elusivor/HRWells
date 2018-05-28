@@ -5,8 +5,8 @@
 }
 
 <h2>Single</h2>
-@Html.Partial("../Partial/_StyleLinks")
-@Html.Partial("../Partial/_DeleteDialog")
+@Html.Partial("_StyleLinks")
+@Html.Partial("_DeleteDialog")
 
 <body>
     <h2>@Model.Name</h2>
@@ -36,4 +36,4 @@
     <button class="btn btn-danger fa fa-trash" data-href="@Url.Action("Delete", "Jockey", new { ID = Model.ID})" data-toggle="modal" data-target="#confirm-delete"> Delete Record</button>
 
 </body>
-@Html.Partial("../Partial/_DeleteScript")
+@Html.Partial("_DeleteScript")

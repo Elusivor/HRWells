@@ -1,0 +1,38 @@
+﻿@model IEnumerable<HRWells.Models.Race>
+@{
+    /**/
+
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List of Races</h2>
+<p>Last Updated: @DateTime.Now</p>
+
+@if (Model.Count() > 0)
+{
+    <button class="btn btn-primary btn-lg">Add Race</button>
+    <br />  
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th>Race Date</th>
+                <th>Track Name</th>
+                <th>Track Length</th>
+            </tr>
+        </thead>
+        @foreach (var Race in Model)
+        {
+            <tr onclick="location.href='@Url.Action("Single","Race", new { Race.ID })'" style="cursor:pointer;">
+                <td>@Race.TOD.ToString("ddd dd MMM yyyy 'at' HH:mm")</td>
+                <td>@Race.Track.Name</td>
+                <td>@(Race.Track.Distance + " m")</td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <p>No Races in the Database</p>
+    <button>Add Race</button>
+}
