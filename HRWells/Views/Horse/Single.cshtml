@@ -5,38 +5,37 @@
 
 }
 @Html.Partial("../Partial/_StyleLinks")
+
+<h2>@Model.Name</h2>
 @Html.Partial("../Partial/_DeleteDialog")
 
-<body>
-    <h2>@Model.Name</h2>
-    <table class=" table table-hover table-striped">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Value</th>
-            </tr>
-        </thead>
+<table class=" table table-hover table-striped">
+    <thead>
         <tr>
-            <td>@Html.LabelFor(m => m.Number)</td>
-            <td>@Model.Number.ToString()</td>
+            <th>Name</th>
+            <th>Value</th>
         </tr>
-        <tr>
-            <td>@Html.LabelFor(m => m.Owner)</td>
-            <td>@Model.Owner</td>
-        </tr>
-        <tr>
-            <td>@Html.LabelFor(m => m.Weight)</td>
-            <td>@Model.Weight.ToString()</td>
-        </tr>
-        <tr>
-            <td>@Html.LabelFor(m => m.Breed)</td>
-            <td>@Model.BreedTypeID</td>
-        </tr>
-    </table>
+    </thead>
+    <tr>
+        <td>@Html.LabelFor(m => m.Number)</td>
+        <td>@Model.Number.ToString()</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(m => m.Owner)</td>
+        <td>@Model.Owner</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(m => m.Weight)</td>
+        <td>@Model.Weight.ToString()</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(m => m.Breed)</td>
+        <td>@Model.BreedTypeID</td>
+    </tr>
+</table>
 
-    <button class="btn btn-primary fa fa-backward" onclick="location.href='@Url.Action("Index", "Horse")';return false;"> Back To List</button>
-    <button class="btn btn-warning fa fa-edit" data-href="@Url.Action("Edit", "Horse", new { ID = Model.ID})"> Edit Record</button>
-    <button class="btn btn-danger fa fa-trash" data-href="@Url.Action("Delete", "Horse", new { ID = Model.ID})" data-toggle="modal" data-target="#confirm-delete"> Delete Record</button>
+<button class="btn btn-primary fa fa-backward" onclick="location.href='@Url.Action("Index", "Horse")';return false;"> Back To List</button>
+<button class="btn btn-warning fa fa-edit" data-href="@Url.Action("Edit", "Horse", new { ID = Model.ID})"> Edit Record</button>
+<button class="btn btn-danger fa fa-trash" data-toggle="modal" data-target="#confirm-delete" data-href="@Url.Action("Delete", "Horse", new { ID = Model.ID})"> Delete Record</button>
 
-</body>
 @Html.Partial("../Partial/_DeleteScript")

@@ -20,11 +20,10 @@ namespace HRWells
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.min.js"));
+                      "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-slate.css",
-                      "~/Context/bootstrap-slate.min.css",
                       "~/Content/site.css"));
         }
     }
