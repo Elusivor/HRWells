@@ -86,7 +86,7 @@ namespace HRWells.Controllers
             MyHorse = _context.Horses.Find(ID);
             if (MyHorse == null)
             {
-                return HttpNotFound();
+                return View("PageNotFound");
             }
             return View(MyHorse);
 
@@ -94,7 +94,17 @@ namespace HRWells.Controllers
         public ActionResult Delete(int ID)
         {
             _context.Horses.Remove(_context.Horses.Find(ID));
-            return View();
+            var horse = _context.Horses.Find(ID);
+            if (horse == null)
+            {
+                return View("PageNotFound");
+            }
+            else
+            {
+                _context.Horses.Remove(horse);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
         }
     }
 }

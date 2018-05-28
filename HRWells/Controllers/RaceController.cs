@@ -28,7 +28,7 @@ namespace HRWells.Controllers
             MyRace = _context.Races.Include(t => t.Track).SingleOrDefault(r => r.ID == ID);
             if (MyRace == null)
             {
-                return HttpNotFound();
+                return View("PageNotFound");
             }
             return View(MyRace);
         }
@@ -37,7 +37,7 @@ namespace HRWells.Controllers
             var race = _context.Races.Find(ID);
             if (race == null)
             {
-                return HttpNotFound();
+                return View("PageNotFound");
             }
             else
             {

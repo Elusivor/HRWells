@@ -25,7 +25,25 @@ namespace HRWells.Controllers
         public ActionResult Single(int ID)
         {
             var Jockey = _context.Jockeys.Find(ID);
+            if (Jockey == null)
+            {
+                return View("PageNotFound");
+            }
             return View(Jockey);
+        }
+        public ActionResult Delete(int ID)
+        {
+            var Jockey = _context.Jockeys.Find(ID);
+            if (Jockey == null)
+            {
+                return View("PageNotFound");
+            }
+            else
+            {
+                _context.Jockeys.Remove(_context.Jockeys.Find(ID));
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
         }
     }
 }
