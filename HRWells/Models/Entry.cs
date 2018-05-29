@@ -14,5 +14,6 @@ namespace HRWells.Models
         public int RaceID { get; set; }
         //NAVIGATION PROPERTIES
         public IEnumerable<Bet> Bets { get; set; }
+        public IEnumerable<Entry> Entries { get; internal set; }
     }
 }

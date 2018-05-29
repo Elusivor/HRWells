@@ -23,7 +23,7 @@
         </thead>
         @foreach (var Race in Model)
         {
-            <tr onclick="location.href='@Url.Action("Single","Race", new { Race.ID })'" style="cursor:pointer;">
+            <tr onclick="location.href='@Url.Action("Single","Race", new { Race.Track.ID })'" style="cursor:pointer;">
                 <td>@Race.TOD.ToString("ddd dd MMM yyyy 'at' HH:mm")</td>
                 <td>@Race.Track.Name</td>
                 <td>@(Race.Track.Distance + " m")</td>
