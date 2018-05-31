@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
+using HRWells.ViewModels;
 
 namespace HRWells.Controllers
 {
@@ -46,22 +47,38 @@ namespace HRWells.Controllers
                 return RedirectToAction("Index");
             }
         }
+
         public ActionResult Single(int ID)
         {
-            //Create a viewmodel to send to the view
-            Entry TheEntriesForThisRace = new Entry()
+            var llist = new Dictionary<DateTime, string>();
+            var entries = _context.Entries.Include(h => h.Horse).Include(j => j.Jockey).Include(t => t.Race.Track).Where(e => e.RaceID == ID).ToList();
+            var lolist = _context.Races.OrderBy(c => c.TOD).ToList();
+            var race = _context.Races.Where(r => r.ID == ID).Include(t => t.Track).FirstOrDefault();
+            //var track = _context.Tracks.Where(t => t.ID == race.Track.ID).FirstOrDefault();
+            foreach (var item in lolist)
             {
-                Race = _context.Races.Find(ID),
-                Entries = _context.Entries.Include(h => h.Horse).Include(j => j.Jockey).Include(t => t.Race.Track).Where(e => e.RaceID == ID).ToList()
+                llist.Add(item.TOD, $"Race ({item.ID})");
+            }
+            //Create a viewmodel to send to the viewz
+            RaceEntryVeiwModel TheEntriesForThisRace = new RaceEntryVeiwModel()
+            {
+                Race = race,
+                Entries = entries,
+                Llist = llist
             };
 
             //If Null
-            if (TheEntriesForThisRace.Race == null)
+            if (TheEntriesForThisRace.Race == null /*|| track.Name == null*/)
             {
                 return HttpNotFound();
                 //return View("PageNotFound");
             }
             return View(TheEntriesForThisRace);
+        }
+        public ActionResult PageNotFound()
+        {
+
+            return View("PageNotFound");
         }
     }
 }

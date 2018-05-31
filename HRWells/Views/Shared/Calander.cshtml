@@ -1,0 +1,248 @@
+﻿@model  HRWells.ViewModels.CalanderInput
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style-type: none;
+            text-align: center
+        }
+
+        body {
+            font-family: Verdana, sans-serif;
+        }
+
+        .month {
+            padding: 70px 25px;
+            width: 100%;
+            background: darkslategrey;
+            text-align: center;
+        }
+
+        .month ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .month ul li {
+            color: white;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .month .prev {
+            float: left;
+            padding-top: 10px;
+        }
+
+        .month .next {
+            float: right;
+            padding-top: 10px;
+        }
+
+        .weekdays {
+            margin: 0;
+            padding: 10px 0;
+            background-color: gray;
+        }
+
+        .weekdays li {
+            display: inline-block;
+            width: 12%;
+            color: white;
+            text-align: center;
+        }
+
+        .days {
+            padding: 10px 0;
+            background: dimgray;
+            margin: 0;
+        }
+
+        .days li {
+            list-style-type: none;
+            display: inline-block;
+            width: 12%;
+            text-align: center;
+            margin-bottom: 5px;
+            font-size: 11px;
+            color: white;
+        }
+
+        .days li .active {
+            padding: 5px;
+            background: darkslategrey;
+            color: white !important
+        }
+    </style>
+</head>
+<body>
+    <div class="month" style="border-top-left-radius: 10px; border-top-right-radius: 10px; margin-bottom: -10px;">
+        <ul>
+            @if ((Model.Back == -1) || (Model.Back == 0))
+            {
+                <li class="prev" style="color:dimgrey">&#10094;</li>
+            }
+            else
+            {
+                <li class="prev" onclick="location.href='@Url.Action("Single", "Race", new { ID = Model.Back})'">&#10094;</li>
+            }
+            @if (Model.Forward == -1)
+            {
+            <li class="next" style="color:dimgrey">&#10095;</li>
+            }
+            else
+            {
+            <li class="next" onclick="location.href='@Url.Action("Single", "Race", new { ID = Model.Forward})'">&#10095;</li>
+            }
+            <li>
+                @Model.Date.ToString("MMMM")<br>
+                <span style="font-size:18px">@Model.Date.ToString("yyyy")</span>
+            </li>
+        </ul>
+    </div>
+
+    <ul class="weekdays" style="border-top-left-radius: 5px; border-top-right-radius: 5px;">
+        <li>Mo</li>
+        <li>Tu</li>
+        <li>We</li>
+        <li>Th</li>
+        <li>Fr</li>
+        <li>Sa</li>
+        <li>Su</li>
+    </ul>
+
+    <ul class="days" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+        @switch (new DateTime(Model.Date.Year, Model.Date.Month, 1).DayOfWeek)
+        {
+            case DayOfWeek.Monday:
+                break;
+            case DayOfWeek.Tuesday:
+                <li></li>
+                break;
+            case DayOfWeek.Wednesday:
+                <li></li>
+                <li></li>
+                break;
+            case DayOfWeek.Thursday:
+                <li></li>
+                <li></li>
+                <li></li>
+                break;
+            case DayOfWeek.Friday:
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                break;
+            case DayOfWeek.Saturday:
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                break;
+            case DayOfWeek.Sunday:
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                break;
+            default:
+                break;
+        }
+
+        @for (int i = 1; i < DateTime.DaysInMonth(Model.Date.Year, Model.Date.Month) + 1; i++)
+        {
+            if (Model.Date.Day == i)
+            {
+                if (@Model.Overlay.ContainsKey(Model.Date))
+                {
+                    <li><span class="active" style="border-radius: 5px" rel="tooltip" title="@Model.Overlay[Model.Date]">@i</span></li>
+                }
+                else
+                {
+                    <li><span class="active" style="border-radius: 5px">@i</span></li>
+                }
+            }
+            else
+            {
+                if (@Model.Overlay.ContainsKey(new DateTime(Model.Date.Year, Model.Date.Month, i, Model.Date.Hour, Model.Date.Minute, Model.Date.Second)))
+                {
+                    <li class="active" style="color:black" data-toggle="tooltip" rel="tooltip" title="@Model.Overlay[new DateTime(Model.Date.Year, Model.Date.Month, i, Model.Date.Hour, Model.Date.Minute, Model.Date.Second)]" onclick="location.href='@Url.Action("Single", "Race", new { ID = int.Parse(@Model.Overlay[new DateTime(Model.Date.Year, Model.Date.Month, i, Model.Date.Hour, Model.Date.Minute, Model.Date.Second)].Trim(new char[] { ')', 'R', 'a', 'c', 'e', '(', ' ' }))})';">@i</li>
+                }
+                else
+                {
+                    <li>@i</li>
+                }
+            }
+        }
+
+        @switch (new DateTime(Model.Date.Year, Model.Date.Month, DateTime.DaysInMonth(Model.Date.Year, Model.Date.Month)).DayOfWeek)
+        {
+            case DayOfWeek.Monday:
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                break;
+            case DayOfWeek.Tuesday:
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                break;
+            case DayOfWeek.Wednesday:
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                break;
+            case DayOfWeek.Thursday:
+                <li></li>
+                <li></li>
+                <li></li>
+                break;
+            case DayOfWeek.Friday:
+                <li></li>
+                <li></li>
+                break;
+            case DayOfWeek.Saturday:
+                <li></li>
+                break;
+            case DayOfWeek.Sunday:
+                break;
+            default:
+                break;
+        }
+
+    </ul>
+
+</body>
+</html>
+
+
+@section scripts {
+    <script type="text/javascript">
+        $(function () {
+            $("[rel='tooltip']").tooltip();
+        });
+    </script>
+}
+
